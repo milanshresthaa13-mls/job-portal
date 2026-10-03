@@ -1,0 +1,13 @@
+{% extends 'landing/base.html' %}
+{% block title %}You're on your way — Pathway{% endblock %}
+{% block content %}
+<section class="registration-page">
+    <div class="registration-card registration-success">
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <p class="eyebrow">Welcome to Pathway</p>
+        <h1>Your next step<br><span>starts now.</span></h1>
+        <p class="registration-intro">Your {{ role_name }} account is ready. You're signed in and can continue exploring Pathway.</p>
+        <a class="button button-dark form-submit" href="{% url 'home' %}">Continue to Pathway <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+{% endblock %}

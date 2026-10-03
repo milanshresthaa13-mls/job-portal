@@ -1,0 +1,23 @@
+{% extends 'landing/base.html' %}
+{% block title %}For Employers — Pathway{% endblock %}
+{% block content %}
+<section class="audience-hero employer-hero">
+    <div class="audience-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> For employers</p>
+        <h1>Build a team<br>that <span>moves you.</span></h1>
+        <p class="hero-text">The right people bring more than experience. Meet talent ready to make a meaningful difference to your work.</p>
+        <a class="button button-dark" href="{% url 'accounts:register_employer' %}">Create an employer account <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="audience-visual employer-visual"><span class="visual-spark">✳</span><div class="team-shapes"><i></i><i></i><i></i><i></i></div><div class="team-note"><strong>Good work<br>takes a good team.</strong><small>Make the connection.</small></div><span class="visual-stamp">BETTER<br>TOGETHER</span></div>
+</section>
+<section class="steps-section section-wrap" id="build-your-team">
+    <div class="section-heading"><p class="eyebrow">Make room for great people</p><h2>Find the right fit for your team.</h2><p>A thoughtful hiring process starts with knowing what your team needs next.</p></div>
+    <div class="steps-grid">
+        <article class="step-card"><span class="step-index">01</span><h3>Get clear on the role</h3><p>Describe the work to be done and the strengths a new teammate will bring.</p></article>
+        <article class="step-card"><span class="step-index">02</span><h3>Look beyond a title</h3><p>Experience matters, and so do curiosity, perspective, and potential.</p></article>
+        <article class="step-card"><span class="step-index">03</span><h3>Make a real connection</h3><p>Give people a sense of your team and the impact they can have.</p></article>
+    </div>
+    <a class="text-link" href="{% url 'job_seekers' %}">Looking for your next role? <span aria-hidden="true">→</span></a>
+    <a class="text-link" href="{% url 'accounts:register_employer' %}">Ready to start? Create your account <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

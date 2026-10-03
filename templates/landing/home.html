@@ -1,0 +1,56 @@
+{% extends 'landing/base.html' %}
+{% block title %}Pathway — Make your next move{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A more human way to work</p>
+        <h1>Your next chapter<br>starts <span>here.</span></h1>
+        <p class="hero-text">Whether you're ready for a new opportunity or looking for the right person, Pathway helps bring people and possibilities together.</p>
+        <div class="hero-actions">
+            <a class="button button-dark" href="{% url 'job_seekers' %}">I'm looking for work <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="{% url 'employers' %}">I'm hiring <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="hero-note"><span class="note-star">✳</span> A fresh start can be a small step.</p>
+    </div>
+    <div class="hero-art" aria-label="Illustration of a person finding their next opportunity">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-sun"></div>
+        <div class="art-card art-card-top"><span class="art-icon icon-lilac">✳</span><span><b>New possibilities</b><small>are closer than you think</small></span><span class="art-arrow">↗</span></div>
+        <div class="art-person"><div class="person-hair"></div><div class="person-head"></div><div class="person-body"></div><div class="person-arm"></div></div>
+        <div class="art-card art-card-bottom"><span class="art-icon icon-yellow">↗</span><span><b>One good connection</b><small>can change everything</small></span></div>
+        <div class="art-caption">MAKE ROOM FOR WHAT'S NEXT</div>
+    </div>
+</section>
+
+<section class="audience-section section-wrap">
+    <div class="section-heading">
+        <p class="eyebrow">One place, two ways forward</p>
+        <h2>Where do you want to go?</h2>
+        <p>Start with what you're looking for. We'll help you find your way.</p>
+    </div>
+    <div class="audience-grid">
+        <a class="audience-card seeker-card" href="{% url 'job_seekers' %}">
+            <div class="card-topline"><span class="card-number">01</span><span class="card-icon">↗</span></div>
+            <p class="card-kicker">For job seekers</p>
+            <h3>Find work that<br>moves you forward.</h3>
+            <p class="card-description">Explore a path to work that fits your goals, your skills, and the life you want to build.</p>
+            <span class="card-link">Your next step <span aria-hidden="true">→</span></span>
+            <span class="decor-star" aria-hidden="true">✳</span>
+        </a>
+        <a class="audience-card employer-card" href="{% url 'employers' %}">
+            <div class="card-topline"><span class="card-number">02</span><span class="card-icon">↗</span></div>
+            <p class="card-kicker">For employers</p>
+            <h3>Meet the people<br>who make it happen.</h3>
+            <p class="card-description">Find thoughtful ways to connect with people ready to bring their skills to your team.</p>
+            <span class="card-link">Build your team <span aria-hidden="true">→</span></span>
+            <span class="decor-sun" aria-hidden="true"></span>
+        </a>
+    </div>
+</section>
+
+<section class="closing-band">
+    <p class="eyebrow">The next step is yours</p>
+    <h2>Good things happen<br>when paths cross.</h2>
+    <a class="button button-light" href="{% url 'job_seekers' %}">Find your pathway <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

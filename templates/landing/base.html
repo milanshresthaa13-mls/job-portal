@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find your next opportunity or meet the people who will help your business grow.">
+    <title>{% block title %}Pathway — Find your next step{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="{% url 'home' %}" aria-label="Pathway home">
+            <span class="brand-mark" aria-hidden="true">p</span>
+            <span>pathway</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="{% url 'job_seekers' %}">For job seekers</a>
+            <a href="{% url 'employers' %}">For employers</a>
+        </nav>
+        <a class="nav-cta" href="{% url 'job_seekers' %}">Explore Pathway <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="site-footer">
+        <a class="brand brand-light" href="{% url 'home' %}">
+            <span class="brand-mark" aria-hidden="true">p</span><span>pathway</span>
+        </a>
+        <p>Good work starts with the right connection.</p>
+        <div class="footer-links">
+            <a href="{% url 'job_seekers' %}">Job seekers</a>
+            <a href="{% url 'employers' %}">Employers</a>
+        </div>
+        <small>© {% now "Y" %} Pathway</small>
+    </footer>
+</body>
+</html>

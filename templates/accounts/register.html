@@ -1,0 +1,30 @@
+{% extends 'landing/base.html' %}
+{% block title %}Create an account — Pathway{% endblock %}
+{% block content %}
+<section class="registration-page">
+    <div class="registration-card">
+        <a class="back-link" href="{% url 'home' %}">← Back to Pathway</a>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Join as a {{ role_name }}</p>
+        <h1>Create your<br><span>account.</span></h1>
+        <p class="registration-intro">Start your next step with Pathway. Your account will be set up as a {{ role_name }}.</p>
+
+        <form method="post" class="registration-form" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}<div class="form-error-summary">{{ form.non_field_errors }}</div>{% endif %}
+            {% for field in form %}
+                <div class="form-field{% if field.errors %} has-errors{% endif %}">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}<small class="field-help">{{ field.help_text|safe }}</small>{% endif %}
+                    {% for error in field.errors %}<small class="field-error">{{ error }}</small>{% endfor %}
+                </div>
+            {% endfor %}
+            <button class="button button-dark form-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="switch-role">Creating the other type of account?
+            {% if role_name == 'job seeker' %}<a href="{% url 'accounts:register_employer' %}">Register as an employer</a>
+            {% else %}<a href="{% url 'accounts:register_job_seeker' %}">Register as a job seeker</a>{% endif %}
+        </p>
+    </div>
+</section>
+{% endblock %}
